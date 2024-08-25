@@ -57,11 +57,14 @@ We need to import the class `OpenAI` and use it to instantiate a client with the
 ```python
 # Import the openai module
 from openai import OpenAI
+# Import userdata to get access to Secret Variables In Colab
+from google.colab import userdata
 ```
+# Add secret variable OPEN_AI_API_KEY to the Colab environment to be used for client initialisation
 
 ```python
 # Create a new client instance
-client = OpenAI(api_key="XXXXXXXXXXXXXXXXXXXXXXXXXXX")
+client = OpenAI(api_key=userdata.get('OPEN_AI_API_KEY'))
 ```
 
 OpenAI must be configured to give the proper answers. In this case it will be an Spanish chef specializing in vegetarian cuisine. Notice that we "prepare" OpenAI with all the information we want using the role `system`.
@@ -152,13 +155,30 @@ Once we know what the user wants to do, we have to ask the specific ingredient, 
 # Make the prompt
 if option == "1":
   dish = input("Enter the name of the dish you want the recipe for: ")
-  prompt = f"Suggest a detailed recipe for {dish}."
 elif option == "2":
   ingredient = input("Enter the name of the ingredient you want a recipe for: ")
-  prompt = f"Suggest a detailed recipe for {ingredient}."
 else:
   recipe = input("Enter the recipe you want to improve:")
-  prompt = f"Suggest improvements to the following recipe: {recipe}."
+```
+
+In collaboration with [AYassin01](https://github.com/AYassin01) we accepted his proposal  to add a simple "handle_input" function that generates the appropriate prompt based on the user's input. The improvements suggested by [Alex.Mazaltov](https://github.com/alex.mazaltov) uses a conditional expression to pass the correct variable (dish, ingredient, or recipe) to the handle_input function based on the selected option.
+
+```python
+prompt = handle_input(option, dish if option == "1" else ingredient if option == "2" else recipe)
+```
+
+The `handle_input` function is defined as follows:
+```python
+# function generates the appropriate prompt based on the user's input.
+def handle_input(option, user_input):
+    if option == "2":  # Ingredient-based
+        return f"How about trying these dishes with {user_input}: ..."
+    elif option == "1":  # Dish name request
+        return f"Here is a detailed recipe for {user_input}: ..."
+    elif option == "3":  # Recipe critique
+        return f"Here's my feedback on the recipe for {user_input}: ..."
+    else:
+        return "I can help with ingredient-based suggestions, recipe requests, or critiques. What would you like to do?"
 ```
 
 ```console
