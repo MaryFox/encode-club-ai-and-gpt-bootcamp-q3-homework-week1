@@ -241,4 +241,6 @@ Sure! Here’s a detailed recipe for a classic Spanish omelette, also known as "
 
 Enjoy your Spanish omelette!
 
+<hr>
+
 Please, give a ⭐ if you liked this repo!
