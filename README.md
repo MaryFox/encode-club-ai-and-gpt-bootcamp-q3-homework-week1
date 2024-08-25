@@ -1,10 +1,6 @@
 # AI and GPT Bootcamp. Homework for week 1.
 
-<img src="images/encodeclub.png" height="69">
-<img src="images/AIGPT_boot_camp.png" height="69">
-<img src="images/python_logo.png" height="69">
-<img src="images/jupyter.png" height="69">
-<img src="images/colab.png" height="69">
+<img src="images/encodeclub.png" height="69"> <img src="images/AIGPT_bootcamp.png" height="69"> <img src="images/python_logo.png" height="69"> <img src="images/jupyter.png" height="69"> <img src="images/colab.png" height="69">
 
 ## Introduction
 
