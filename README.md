@@ -55,11 +55,14 @@ We need to import the class `OpenAI` and use it to instantiate a client with the
 ```python
 # Import the openai module
 from openai import OpenAI
+# Import userdata to get access to Secret Variables In Colab
+from google.colab import userdata
 ```
+# Add secret variable OPEN_AI_API_KEY to the Colab environment to be used for client initialisation
 
 ```python
 # Create a new client instance
-client = OpenAI(api_key="XXXXXXXXXXXXXXXXXXXXXXXXXXX")
+client = OpenAI(api_key=userdata.get('OPEN_AI_API_KEY'))
 ```
 
 OpenAI must be configured to give the proper answers. In this case it will be an Spanish chef specializing in vegetarian cuisine. Notice that we "prepare" OpenAI with all the information we want using the role `system`.
