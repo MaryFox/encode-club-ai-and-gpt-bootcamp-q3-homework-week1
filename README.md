@@ -1,5 +1,7 @@
 # AI and GPT Bootcamp. Homework for week 1.
 
+<img src="images/encodeclub.png" height="72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/AIGPT_bootcamp.png" height="72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/python_logo.png" height="72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/jupyter.png" height="72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/colab2.png" height="69">
+
 ## Introduction
 
 In this repo you will find the code and documentation of the **homework for week 1** of the 
@@ -119,7 +121,7 @@ There are a few models we can use: GPT4, GPT3.5, GPT4 mini, etc. We must choose 
 model = "gpt-4o-mini"
 ```
 
-A menu is shown so the user can choose one the actions required. According to the stament of the exercise, the clien can tell an ingredient, a dish or a recipe. The menu detects incorrect inputs, only options 1, 2 and 3 are allowed.
+A menu is shown so the user can choose one the actions required. According to the stament of the exercise, the client can tell an ingredient, a dish or a recipe. The menu detects incorrect inputs, only options 1, 2 and 3 are allowed.
 
 ```python
 # Menu
@@ -255,5 +257,7 @@ Sure! Here’s a detailed recipe for a classic Spanish omelette, also known as "
 - **Presentation**: Serve with a fresh side salad or a drizzle of aioli for added flavor.
 
 Enjoy your Spanish omelette!
+
+<hr>
 
 Please, give a ⭐ if you liked this repo!
