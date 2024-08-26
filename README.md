@@ -167,17 +167,14 @@ prompt = handle_input(option, dish if option == "1" else ingredient if option ==
 
 The `handle_input` function is defined as follows:
 ```python
-# function generates the appropriate prompt based on the user's input.
+# Enhanced function to generate the appropriate prompt based on the user's input.
 def handle_input(option, user_input):
-    if option == "2":  # Ingredient-based
-        return f"How about trying these dishes with {user_input}: ..."
-    elif option == "1":  # Dish name request
-        return f"Here is a detailed recipe for {user_input}: ..."
-    elif option == "3":  # Recipe critique
-        return f"Here's my feedback on the recipe for {user_input}: ..."
-    else:
-        return "I can help with ingredient-based suggestions, recipe requests, or critiques. What would you like to do?"
-```
+    prompts = {
+        "2": f"Suggest a detailed recipe for {user_input}",  # Ingredient-based
+        "1": f"Suggest a detailed recipe for {user_input}",  # Dish name request
+        "3": f"I need your feedback on the recipe. Suggest improvements to the following recipe {user_input}: ..."  # Recipe critique
+    }
+    return prompts.get(option, "I can help with ingredient-based suggestions, recipe requests, or critiques. What would you like to do?")```
 
 ```console
 Enter the name of the dish you want the recipe for: spanish omelette
